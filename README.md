@@ -9,8 +9,8 @@ step2. 每一點計算與中心點的距離，判斷該點是哪一群。
 step3. 每一群內重新計算平均值，作為新的中心點。
 step4. 回到第二步，重新分群，直到分群結果固定。
 ```
-![image](https://github.com/Cheng-Yi-Ting/KMeans/blob/master/img/center points & clustering result.png)
-![image](https://github.com/Larix/TF-IDF_Tutorial/blob/master/img/result.png)
+![image](https://github.com/Cheng-Yi-Ting/KMeans/blob/master/img/center_points&clustering_result.png)
+![image](https://github.com/Cheng-Yi-Ting/KMeans/blob/master/img/result.png)
 
 
 ### 補充:
