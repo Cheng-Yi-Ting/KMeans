@@ -85,10 +85,10 @@ if __name__ == '__main__':
     tfidf = transformer.fit_transform(vectorizer.fit_transform(corpus))
     # print(vectorizer.fit_transform(corpus))
     # print(tfidf)
-    # word = vectorizer.get_feature_names()  # 获取词袋模型中的所有词语
+    word = vectorizer.get_feature_names()  # 获取词袋模型中的所有词语
     # print(word)
     weight = tfidf.toarray()  # 将tf-idf矩阵抽取出来，元素a[i][j]表示j词在i类文本中的tf-idf权重
-    # print(weight)
+    print(weight)
     # for i in range(len(weight)):  # 打印每类文本的tf-idf词语权重，第一个for遍历所有文本，第二个for便利某一类文本下的词语权重
     #     print("-------输出第", i, "類文本的字詞tf-idf權重------")
     #     for j in range(len(word)):
@@ -101,24 +101,24 @@ if __name__ == '__main__':
     # print(s)
     # print('--------------------------')
     # # n_clusters个中心点
-    # print(clf.cluster_centers_)
+    print(clf.cluster_centers_)
     # print('--------------------------')
     # # 每个样本所属的簇
-    # print(clf.labels_)
+    print(clf.labels_)
     # print('--------------------------')
 
     # 增加label欄位到json中，判斷新聞文章屬於哪個群集
-    for i in range(len(tf_idf.docs)):
-        tf_idf.docs[i]['label'] = clf.labels_[i]
-        # print(i, tf_idf.docs[i])
-    # 排序，相同群集合在一起
-    lines = sorted(tf_idf.docs, key=lambda k: k['label'])
+    # for i in range(len(tf_idf.docs)):
+    #     tf_idf.docs[i]['label'] = clf.labels_[i]
+    #     # print(i, tf_idf.docs[i])
+    # # 排序，相同群集合在一起
+    # lines = sorted(tf_idf.docs, key=lambda k: k['label'])
 
-    i = 0
-    while i < len(tf_idf.docs):
-        print(i, ':', lines[i]['title'], " ", lines[i]
-              ['category'], " ", lines[i]['label'])
-        i = i+1
+    # i = 0
+    # while i < len(tf_idf.docs):
+    #     print(i, ':', lines[i]['title'], " ", lines[i]
+    #           ['category'], " ", lines[i]['label'])
+    #     i = i+1
     # for line in lines:
     #     print(i, ':', line.title, " ", line.label)
     #     i = i+1
